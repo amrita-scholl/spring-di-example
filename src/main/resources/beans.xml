@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="d" class="com.example.service.D" />
+
+    <bean id="c" class="com.example.service.C">
+        <property name="d" ref="d" />
+    </bean>
+
+    <bean id="b" class="com.example.service.B">
+        <property name="c" ref="c" />
+    </bean>
+
+    <bean id="a" class="com.example.service.A">
+        <property name="b" ref="b" />
+    </bean>
+</beans>
